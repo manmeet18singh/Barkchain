@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(33, 33, 33);
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+}
+#dogLogo {
+    margin-right: 10%;
+}
+#myTab {
+    margin: 5px 7px;
+    background-color: white;
+}

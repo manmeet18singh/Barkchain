@@ -1,3 +1,7 @@
+.navbar {
+    background: rgb(31,0,181);
+    background: linear-gradient(180deg, rgba(31,0,181,1) 0%, rgba(139,0,255,1) 100%);
+}
 .navbar-brand {
     font-family: 'Cinzel', serif;
 }
@@ -66,4 +70,11 @@ a:hover {
     font-size: large;
     font-weight: 500;
     margin-left: 10px;
+}
+
+#category {
+    font-family: 'Cinzel', serif;
+    color: #5700a8;
+    font-weight: 900;
+    font-size: x-large;
 }

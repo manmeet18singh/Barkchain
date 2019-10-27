@@ -1,14 +1,69 @@
-body{
-    background-color: rgb(33, 33, 33);
-}
-
 .navbar-brand {
     font-family: 'Cinzel', serif;
 }
+
 #dogLogo {
     margin-right: 10%;
 }
-#myTab {
-    margin: 5px 7px;
-    background-color: white;
+
+a {
+    color: #f8bb35;
+}
+
+a:hover {
+    color: #5700a8;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #5700a8;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.carousel-indicators {
+    filter: invert(100%);
+}
+
+.card-header {
+    padding: 0%;
+    border-bottom: none;
+    font-family: 'Lora', serif;
+    color: black;
+}
+
+.nav-link {
+    font-family: 'Lora', serif;
+}
+
+.card-body {
+    font-family: 'Lora', serif;
+}
+
+.carousel-item {
+    height: 30vw;
+    object-fit: cover;
+}
+
+.span-title {
+    font-family: 'Lora', serif;
+    padding-left: 5px;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.span-description-large {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    color: #5700a8;
+    font-weight: 900;
+    padding-left: 20px;
+}
+
+.span-description {
+    font-size: large;
+    font-weight: 500;
+    margin-left: 10px;
 }

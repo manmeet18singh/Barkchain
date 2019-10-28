@@ -23,54 +23,74 @@
             AKC Judging DAPP
         </a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <button type="button" class="btn btn-sm btn-warning register-btn">Register</button>
+
+            
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Sporting</a>
+                    <a class="nav-link sporting-group" href="../index.html">Sporting</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="hound.html">Hound</a>
+                    <a class="nav-link hound-group" href="hound.html">Hound</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="working.html">Working<span class="sr-only">(current)</span></a>
+                    <a class="nav-link working-group" href="working.html">Working<span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="terrier.html">Terrier</a>
+                    <a class="nav-link terrier-group" href="terrier.html">Terrier</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="toy.html">Toy</a>
+                    <a class="nav-link toy-group" href="toy.html">Toy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="nonsporting.html">Non-Sporting</a>
+                    <a class="nav-link nonsporting-group" href="nonsporting.html">Non-Sporting</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="herding.html">Herding</a>
+                    <a class="nav-link herding-group" href="herding.html">Herding</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+
+
+    <div class="card mx-5 my-5">
+        <div class="card-body">
+            <div class="row">
+                <span class="span-description-large" style="font-size: 25px;"> Address : </span>
+                <select id="enter_address" class="ml-2" value=""></select>
+            </div>
+            <div class="row mt-3">
+                <button type="button" class="btn btn-warning register-btn mx-auto">Register</button>
+                <button type="button" class="btn btn-warning phase-btn mx-auto">Change Phase</button>
+                <button type="button" class="btn btn-warning winner-btn mx-auto">Declare Winner</button>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="card mx-5 my-5">
         <div class="card-header">
             <ul class="nav nav-tabs" id="dogNames" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="gunner-tab" data-toggle="tab" href="#gunner" role="tab"
+                    <a class="nav-link active d11" id="gunner-tab" data-toggle="tab" href="#gunner" role="tab"
                         aria-controls="gunner" aria-selected="true">Gunner</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="kona-tab" data-toggle="tab" href="#kona" role="tab" aria-controls="kona"
+                    <a class="nav-link d12" id="kona-tab" data-toggle="tab" href="#kona" role="tab" aria-controls="kona"
                         aria-selected="false">Kona</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="oscar-tab" data-toggle="tab" href="#oscar" role="tab" aria-controls="oscar"
-                        aria-selected="false">Oscar</a>
+                    <a class="nav-link d13" id="oscar-tab" data-toggle="tab" href="#oscar" role="tab"
+                        aria-controls="oscar" aria-selected="false">Oscar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="olive-tab" data-toggle="tab" href="#olive" role="tab" aria-controls="olive"
-                        aria-selected="false">Olive</a>
+                    <a class="nav-link d14" id="olive-tab" data-toggle="tab" href="#olive" role="tab"
+                        aria-controls="olive" aria-selected="false">Olive</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="maya-tab" data-toggle="tab" href="#maya" role="tab" aria-controls="maya"
+                    <a class="nav-link d15" id="maya-tab" data-toggle="tab" href="#maya" role="tab" aria-controls="maya"
                         aria-selected="false">Maya</a>
                 </li>
             </ul>
@@ -142,7 +162,8 @@
                                     <img src="../images/Working/B/B4.jpg" class="d-block w-100">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../images/Working/B/B5.jpg" class="d-block w-100" style="margin-top: -20%;">
+                                    <img src="../images/Working/B/B5.jpg" class="d-block w-100"
+                                        style="margin-top: -20%;">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#bIndicators" role="button" data-slide="prev">
@@ -166,9 +187,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -184,9 +205,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -204,9 +225,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -222,9 +243,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -242,9 +263,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -260,9 +281,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -367,9 +388,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -385,9 +406,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -405,9 +426,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -423,9 +444,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -443,9 +464,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -461,9 +482,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -529,7 +550,8 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../images/Working/GD/GD0.jpg" class="d-block w-100" style="margin-top: -2%;">
+                                    <img src="../images/Working/GD/GD0.jpg" class="d-block w-100"
+                                        style="margin-top: -2%;">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="../images/Working/GD/GD1.jpg" class="d-block w-100">
@@ -565,9 +587,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -583,9 +605,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -603,9 +625,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -622,9 +644,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -642,9 +664,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -660,9 +682,9 @@
                             </div>
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -728,7 +750,8 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../images/Working/M/M0.jpg" class="d-block w-100" style="margin-top: -5%;">
+                                    <img src="../images/Working/M/M0.jpg" class="d-block w-100"
+                                        style="margin-top: -5%;">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="../images/Working/M/M1.jpg" class="d-block w-100">
@@ -764,9 +787,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -782,9 +805,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -802,9 +825,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -820,9 +843,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -840,9 +863,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -857,9 +880,9 @@
                             </div>
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -925,7 +948,8 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../images/Working/SH/SH0.jpg" class="d-block w-100" style="margin-top: -5%;">
+                                    <img src="../images/Working/SH/SH0.jpg" class="d-block w-100"
+                                        style="margin-top: -5%;">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="../images/Working/SH/SH1.jpg" class="d-block w-100">
@@ -964,9 +988,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -982,9 +1006,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -1002,9 +1026,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -1020,9 +1044,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -1040,9 +1064,9 @@
                         <div class="form-row mx-3 my-3">
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -1058,9 +1082,9 @@
 
                             <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>0</option>
+                                <select id="inputState enter_score" class="form-control">
+                                    
+                                    <option selected>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -1091,7 +1115,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

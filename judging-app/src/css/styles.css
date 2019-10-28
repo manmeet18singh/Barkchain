@@ -1,9 +1,11 @@
 body {
-    background: rgb(31,0,181);
-    background: linear-gradient(180deg, rgba(31,0,181,1) 0%, rgba(139,0,255,1) 100%);
+    background: rgb(33, 0, 189);
+    background: linear-gradient(180deg, rgba(33, 0, 189, 1) 0%, rgba(54, 17, 145, 1) 50%, rgba(139, 0, 255, 1) 100%);
 }
+
 .navbar-brand {
     font-family: 'Cinzel', serif;
+    margin-right: 5%;
 }
 
 #dogLogo {
@@ -18,7 +20,8 @@ a:hover {
     color: #5700a8;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
     color: #5700a8;
 }
 

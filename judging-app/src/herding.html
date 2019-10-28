@@ -23,6 +23,7 @@
             AKC Judging DAPP
         </a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <button type="button" class="btn btn-sm btn-warning register-btn">Register</button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Sporting</a>
@@ -53,8 +54,8 @@
         <div class="card-header">
             <ul class="nav nav-tabs" id="dogNames" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="ava-tab" data-toggle="tab" href="#ava" role="tab"
-                        aria-controls="ava" aria-selected="true">Ava</a>
+                    <a class="nav-link active" id="ava-tab" data-toggle="tab" href="#ava" role="tab" aria-controls="ava"
+                        aria-selected="true">Ava</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="romeo-tab" data-toggle="tab" href="#romeo" role="tab" aria-controls="romeo"
@@ -69,8 +70,8 @@
                         aria-selected="false">Kai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="minnie-tab" data-toggle="tab" href="#minnie" role="tab" aria-controls="minnie"
-                        aria-selected="false">Minnie</a>
+                    <a class="nav-link" id="minnie-tab" data-toggle="tab" href="#minnie" role="tab"
+                        aria-controls="minnie" aria-selected="false">Minnie</a>
                 </li>
             </ul>
         </div>
@@ -113,7 +114,7 @@
                             </div>
                             <div class="row">
                                 <a href="http://images.akc.org/pdf/breeds/standards/BeardedCollie.pdf"
-                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREAD STANDARD</a>
+                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREED STANDARD</a>
                             </div>
                         </div>
                     </div>
@@ -129,8 +130,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="images/Herding/BC/BC0.jpg" class="d-block w-100"
-                                        style="margin-top: -15%">
+                                    <img src="images/Herding/BC/BC0.jpg" class="d-block w-100" style="margin-top: -15%">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="images/Herding/BC/BC1.jpg" class="d-block w-100">
@@ -142,8 +142,8 @@
                                     <img src="images/Herding/BC/BC3.jpg" class="d-block w-100">
                                 </div>
                                 <div class="carousel-item">
-                                        <img src="images/Herding/BC/BC4.jpg" class="d-block w-100">
-                                    </div>
+                                    <img src="images/Herding/BC/BC4.jpg" class="d-block w-100">
+                                </div>
                                 <div class="carousel-item">
                                     <img src="images/Herding/BC/BC5.jpg" class="d-block w-100"
                                         style="margin-top: -20%;">
@@ -168,7 +168,7 @@
                     <div class="container-fluid">
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -183,7 +183,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning gen-app-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -197,10 +201,14 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning head-btn">Submit</button>
+                            </div>
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -215,7 +223,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning body-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -229,10 +241,13 @@
                                     <option>7</option>
                                 </select>
                             </div>
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning forq-btn">Submit</button>
+                            </div>
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -247,7 +262,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning coat-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -261,9 +280,12 @@
                                     <option>7</option>
                                 </select>
                             </div>
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning hindq-btn">Submit</button>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right mx-3 my-3">Submit</button>
+
                     </div>
                 </div>
             </div>
@@ -305,7 +327,7 @@
                             </div>
                             <div class="row">
                                 <a href="http://images.akc.org/pdf/breeds/standards/Border_Collie.pdf"
-                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREAD STANDARD</a>
+                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREED STANDARD</a>
                             </div>
                         </div>
                     </div>
@@ -337,7 +359,8 @@
                                     <img src="images/Herding/BOC/BOC4.jpg" class="d-block w-100">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="images/Herding/BOC/BOC5.jpg" class="d-block w-100" style="margin-top: -25%;">
+                                    <img src="images/Herding/BOC/BOC5.jpg" class="d-block w-100"
+                                        style="margin-top: -25%;">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#bocIndicators" role="button" data-slide="prev">
@@ -359,7 +382,7 @@
                     <div class="container-fluid">
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -374,7 +397,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning gen-app-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -388,10 +415,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning head-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -406,7 +438,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning body-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -420,10 +456,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning forq-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -438,7 +479,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning coat-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -452,9 +497,14 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning hindq-btn">Submit</button>
+                            </div>
+
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right mx-3 my-3">Submit</button>
+
                     </div>
                 </div>
             </div>
@@ -495,7 +545,7 @@
                             </div>
                             <div class="row">
                                 <a href="http://images.akc.org/pdf/breeds/standards/GermanShepherdDog.pdf"
-                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREAD STANDARD</a>
+                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREED STANDARD</a>
                             </div>
                         </div>
                     </div>
@@ -549,7 +599,7 @@
                     <div class="container-fluid">
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -564,7 +614,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning gen-app-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -578,10 +632,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning head-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -596,7 +655,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning body-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -610,10 +673,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning forq-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -628,7 +696,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning coat-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -642,9 +714,14 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning hindq-btn">Submit</button>
+                            </div>
+
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right mx-3 my-3">Submit</button>
+
                     </div>
                 </div>
             </div>
@@ -661,7 +738,8 @@
                                 <span class="span-title">Dog Breed: </span>
                             </div>
                             <div class="row">
-                                <span class="span-description-large" style="font-size: 35px;">Pembroke Welsh Corgi</span>
+                                <span class="span-description-large" style="font-size: 35px;">Pembroke Welsh
+                                    Corgi</span>
                             </div>
                             <div class="row">
                                 <span class="span-title">AKC Breed Popularity: </span>
@@ -685,7 +763,7 @@
                             </div>
                             <div class="row">
                                 <a href="http://images.akc.org/pdf/breeds/standards/PembrokeWelshCorgi.pdf"
-                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREAD STANDARD</a>
+                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREED STANDARD</a>
                             </div>
                         </div>
                     </div>
@@ -715,8 +793,8 @@
                                         style="margin-top: 3%;">
                                 </div>
                                 <div class="carousel-item">
-                                        <img src="images/Herding/PWC/PWC4.jpg" class="d-block w-100">
-                                    </div>
+                                    <img src="images/Herding/PWC/PWC4.jpg" class="d-block w-100">
+                                </div>
                                 <div class="carousel-item">
                                     <img src="images/Herding/PWC/PWC5.jpg" class="d-block w-100"
                                         style="margin-top: 3%;">
@@ -741,7 +819,7 @@
                     <div class="container-fluid">
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -756,7 +834,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning gen-app-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -770,10 +852,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning head-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -788,7 +875,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning body-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -802,10 +893,14 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning forq-btn">Submit</button>
+                            </div>
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -820,7 +915,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning coat-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -833,10 +932,15 @@
                                     <option>6</option>
                                     <option>7</option>
                                 </select>
+
+                            </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning hindq-btn">Submit</button>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right mx-3 my-3">Submit</button>
+
                     </div>
                 </div>
             </div>
@@ -877,7 +981,7 @@
                             </div>
                             <div class="row">
                                 <a href="http://images.akc.org/pdf/breeds/standards/ShetlandSheepdog.pdf"
-                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREAD STANDARD</a>
+                                    class="btn btn-outline-warning mt-5 ml-1">SEE BREED STANDARD</a>
                             </div>
                         </div>
                     </div>
@@ -927,7 +1031,7 @@
                     <div class="container-fluid">
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">General Appearance: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -942,7 +1046,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning gen-app-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Head: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -956,10 +1064,15 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning head-btn">Submit</button>
+                            </div>
+
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Body: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -974,7 +1087,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning body-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Forequarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -988,10 +1105,14 @@
                                     <option>7</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning forq-btn">Submit</button>
+                            </div>
                         </div>
 
                         <div class="form-row mx-3 my-3">
-                            <div class="form-group col">
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Coat: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -1006,7 +1127,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning coat-btn">Submit</button>
+                            </div>
+
+                            <div class="form-group col-5">
                                 <label for="inputState" id="category">Hindquarters: </label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -1020,9 +1145,12 @@
                                     <option>7</option>
                                 </select>
                             </div>
+                            <div class="form-group col align-self-end">
+                                <button type="button" class="btn btn-warning hindq-btn">Submit</button>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right mx-3 my-3">Submit</button>
+
                     </div>
                 </div>
             </div>
@@ -1042,7 +1170,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
+    <script src="js/dist/web3.min.js"></script>
+    <script src="js/dist/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
 
 
 </body>

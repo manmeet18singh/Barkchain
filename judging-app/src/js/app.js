@@ -6,19 +6,19 @@ App = {
     chairPerson:null,
     currentAccount:null,
     init: function() {
-      $.getJSON('../proposals.json', function(data) {
-        var proposalsRow = $('#proposalsRow');
-        var proposalTemplate = $('#proposalTemplate');
+      // $.getJSON('../proposals.json', function(data) {
+      //   var proposalsRow = $('#proposalsRow');
+      //   var proposalTemplate = $('#proposalTemplate');
   
-        for (i = 0; i < data.length; i ++) {
-          proposalTemplate.find('.panel-title').text(data[i].name);
-          proposalTemplate.find('img').attr('src', data[i].picture);
-          proposalTemplate.find('.btn-vote').attr('data-id', data[i].id);
+      //   for (i = 0; i < data.length; i ++) {
+      //     proposalTemplate.find('.panel-title').text(data[i].name);
+      //     proposalTemplate.find('img').attr('src', data[i].picture);
+      //     proposalTemplate.find('.btn-vote').attr('data-id', data[i].id);
   
-          proposalsRow.append(proposalTemplate.html());
-          App.names.push(data[i].name);
-        }
-      });
+      //     proposalsRow.append(proposalTemplate.html());
+      //     App.names.push(data[i].name);
+      //   }
+      // });
       return App.initWeb3();
     },
   
@@ -53,8 +53,20 @@ App = {
     },
   
     bindEvents: function() {
-      $(document).on('click', '.btn-vote', App.handleVote);
+      // scoring functions
+      $(document).on('click', '.gen-app-btn', App.handleGenAppScore);
+      $(document).on('click', '.head-btn', App.handleHeadScore);
+      $(document).on('click', '.body-btn', App.handleBodyScore);
+      $(document).on('click', '.forq-btn', App.handleForqScore);
+      $(document).on('click', '.coat-btn', App.handleCoatScore);
+      $(document).on('click', '.hindq-btn', App.handleHindqScore);
+
+      
+
+      // win calc function
       $(document).on('click', '#win-count', App.handleWinner);
+
+      // register function
       $(document).on('click', '#register', function(){ var ad = $('#enter_address').val(); App.handleRegister(ad); });
     },
   

@@ -41,10 +41,10 @@ App = {
 
   bindEvents: function () {
     // scoring functions
-    $(document).on('click', '.gen-app-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleGenAppScore(score);
-    });
+    $(document).on('click', '.gen-app-btn',
+      // var score = $("#enter_score option:selected").val();
+      App.handleGenAppScore
+    );
     $(document).on('click', '.head-btn', function () {
       var score = $("#enter_score option:selected").val();
       App.handleHeadScore(score);
@@ -66,65 +66,13 @@ App = {
       App.handleHindqScore(score)
     });
 
-
-
-    // group change functions
-    $(document).on('click', '.sporting-group', handleChangeGroup("Sporting"));
-    $(document).on('click', '.hound-group', handleChangeGroup(Hound));
-    $(document).on('click', '.working-group', handleChangeGroup(Working));
-    $(document).on('click', '.terrier-group', handleChangeGroup(Terrier));
-    $(document).on('click', '.toy-group', handleChangeGroup(Toy));
-    $(document).on('click', '.nonsporting-group', handleChangeGroup(NonSporting));
-    $(document).on('click', '.herding-group', handleChangeGroup(Herding));
-
-    // dog change functions
-    // $(document).on('click', '.d1', handleChangeDog(1));
-    // $(document).on('click', '.d2', handleChangeDog(2));
-    // $(document).on('click', '.d3', handleChangeDog(3));
-    // $(document).on('click', '.d4', handleChangeDog(4));
-    // $(document).on('click', '.d5', handleChangeDog(5));
-    // $(document).on('click', '.d6', handleChangeDog(6));
-    // $(document).on('click', '.d7', handleChangeDog(7));
-    // $(document).on('click', '.d8', handleChangeDog(8));
-    // $(document).on('click', '.d9', handleChangeDog(9));
-    // $(document).on('click', '.d10', handleChangeDog(10));
-    // $(document).on('click', '.d11', handleChangeDog(11));
-    // $(document).on('click', '.d12', handleChangeDog(12));
-    // $(document).on('click', '.d13', handleChangeDog(13));
-    // $(document).on('click', '.d14', handleChangeDog(14));
-    // $(document).on('click', '.d15', handleChangeDog(15));
-    // $(document).on('click', '.d16', handleChangeDog(16));
-    // $(document).on('click', '.d17', handleChangeDog(17));
-    // $(document).on('click', '.d18', handleChangeDog(18));
-    // $(document).on('click', '.d19', handleChangeDog(19));
-    // $(document).on('click', '.d20', handleChangeDog(20));
-    // $(document).on('click', '.d21', handleChangeDog(21));
-    // $(document).on('click', '.d22', handleChangeDog(22));
-    // $(document).on('click', '.d23', handleChangeDog(23));
-    // $(document).on('click', '.d24', handleChangeDog(24));
-    // $(document).on('click', '.d25', handleChangeDog(25));
-    // $(document).on('click', '.d26', handleChangeDog(26));
-    // $(document).on('click', '.d27', handleChangeDog(27));
-    // $(document).on('click', '.d28', handleChangeDog(28));
-    // $(document).on('click', '.d29', handleChangeDog(29));
-    // $(document).on('click', '.d30', handleChangeDog(30));
-    // $(document).on('click', '.d31', handleChangeDog(31));
-    // $(document).on('click', '.d32', handleChangeDog(32));
-    // $(document).on('click', '.d33', handleChangeDog(33));
-    // $(document).on('click', '.d34', handleChangeDog(34));
-    // $(document).on('click', '.d35', handleChangeDog(35));
-
-
-    // phase change function
-    $(document).on('click', '.phase-btn', App.handlePhaseChange);
-
     // win calc function
     $(document).on('click', '.winner-btn', App.handleWinner);
 
     // register function
-    $(document).on('click', '.register-btn', function () {
-      var ad = $('#enter_address').val();
-      App.handleRegister(ad);
+    $(document).on('click', '#register', function () {
+      var addr = $("#enter_address option:selected").val();
+      App.handleRegister(addr);
     });
   },
 
@@ -139,39 +87,31 @@ App = {
     });
   },
 
-  getChairperson: function () {
-    App.contracts.vote.deployed().then(function (instance) {
+  getChairperson : function(){
+    App.contracts.vote.deployed().then(function(instance) {
       return instance;
-    }).then(function (result) {
+    }).then(function(result) {
       App.chairPerson = result.constructor.currentProvider.selectedAddress.toString();
       App.currentAccount = web3.eth.coinbase;
-      if (App.chairPerson != App.currentAccount) {
-        jQuery('#address_div').css('display', 'none');
-        jQuery('#register_div').css('display', 'none');
-      } else {
-        jQuery('#address_div').css('display', 'block');
-        jQuery('#register_div').css('display', 'block');
-      }
     })
   },
 
-  handleRegister: function (addr) {
-
+  handleRegister: function(addr){
     var voteInstance;
-    App.contracts.vote.deployed().then(function (instance) {
+    App.contracts.vote.deployed().then(function(instance) {
       voteInstance = instance;
       return voteInstance.register(addr);
-    }).then(function (result, err) {
-      if (result) {
-        if (parseInt(result.receipt.status) == 1)
-          alert(addr + " registration done successfully")
-        else
-          alert(addr + " registration not done successfully due to revert")
-      } else {
-        alert(addr + " registration failed")
-      }
+    }).then(function(result, err){
+        if(result){
+            if(parseInt(result.receipt.status) == 1)
+            alert(addr + " registration done successfully")
+            else
+            alert(addr + " registration not done successfully due to revert")
+        } else {
+            alert(addr + " registration failed")
+        }   
     });
-  },
+},
 
   handleWinner: function () {
     console.log("To get winner");
@@ -188,27 +128,36 @@ App = {
   },
 
 
-  handleGenAppScore: function (score) {
-    web3.eth.getAccounts(function (error, accounts) {
+  handleGenAppScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+
+    // TODO: you need data-id="0,1,2,3,4..." in the button tags in the html for proposal id to work
+
+    var proposalId = parseInt($(event.target).data('id'));
+
+    console.log(proposalId)
+
+    var voteInstance;
+
+    web3.eth.getAccounts(function(error, accounts) {
       var account = accounts[0];
 
-      App.contracts.vote.deployed().then(function (instance) {
+      App.contracts.vote.deployed().then(function(instance) {
         voteInstance = instance;
 
-        return voteInstance.generalAppearanceScore(score, {
-          from: account
+        return voteInstance.generalAppearanceScore(proposalId, {from: account});
+      }).then(function(result, err){
+            if(result){
+                console.log(result.receipt.status);
+                if(parseInt(result.receipt.status) == 1)
+                alert(account + " voting done successfully")
+                else
+                alert(account + " voting not done successfully due to revert")
+            } else {
+                alert(account + " voting failed")
+            }   
         });
-      }).then(function (result, err) {
-        if (result) {
-          console.log(result.receipt.status);
-          if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
-          else
-            alert(account + " General Appearence Score not done successfully due to revert")
-        } else {
-          alert(account + " General Appearence Score failed")
-        }
-      });
     });
   },
 
@@ -331,18 +280,13 @@ App = {
     });
   },
 
-  handleChangeGroup: function (group) {
-    console.log(group);
-  },
+  // handleChangeGroup: function (group) {
+  //   console.log(group);
+  // },
 
-  handleChangeDog : function (dog) {
-    console.log("change dog not yet implemented");
-  }
-
-
-
-
-
+  // handleChangeDog : function (dog) {
+  //   console.log("change dog not yet implemented");
+  // }
 };
 
 $(function () {

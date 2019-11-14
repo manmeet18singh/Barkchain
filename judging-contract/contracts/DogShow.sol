@@ -157,7 +157,7 @@ contract DogShow {
     }
 
     // function bodyScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
-    function bodyScire(uint scr, uint toDog) public {
+    function bodyScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
         // require(!sender.voted_bScr, "Cannot have already voted");
         // require(currentDog < dogs.length, "Invalid Dog");

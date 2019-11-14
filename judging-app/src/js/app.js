@@ -5,7 +5,7 @@ App = {
   url: 'http://127.0.0.1:7545',
   chairPerson: null,
   currentAccount: null,
-  init: function () { 
+  init: function () {
     return App.initWeb3();
   },
 
@@ -41,30 +41,17 @@ App = {
 
   bindEvents: function () {
     // scoring functions
-    $(document).on('click', '.gen-app-btn',
-      // var score = $("#enter_score option:selected").val();
-      App.handleGenAppScore
-    );
-    $(document).on('click', '.head-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleHeadScore(score);
-    });
-    $(document).on('click', '.body-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleBodyScore(score);
-    });
-    $(document).on('click', '.forq-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleForqScore(score);
-    });
-    $(document).on('click', '.coat-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleCoatScore(score);
-    });
-    $(document).on('click', '.hindq-btn', function () {
-      var score = $("#enter_score option:selected").val();
-      App.handleHindqScore(score)
-    });
+    $(document).on('click', '.gen-app-btn', App.handleGenAppScore);
+
+    $(document).on('click', '.head-btn', App.handleHeadScore);
+
+    $(document).on('click', '.body-btn', App.handleBodyScore);
+
+    $(document).on('click', '.forq-btn', App.handleForqScore);
+
+    $(document).on('click', '.coat-btn', App.handleCoatScore);
+
+    $(document).on('click', '.hindq-btn', App.handleHindqScore);
 
     // win calc function
     $(document).on('click', '.winner-btn', App.handleWinner);
@@ -87,206 +74,210 @@ App = {
     });
   },
 
-  getChairperson : function(){
-    App.contracts.vote.deployed().then(function(instance) {
+  getChairperson: function () {
+    App.contracts.vote.deployed().then(function (instance) {
       return instance;
-    }).then(function(result) {
+    }).then(function (result) {
       App.chairPerson = result.constructor.currentProvider.selectedAddress.toString();
       App.currentAccount = web3.eth.coinbase;
     })
   },
 
-  handleRegister: function(addr){
-    var voteInstance;
-    App.contracts.vote.deployed().then(function(instance) {
-      voteInstance = instance;
-      return voteInstance.register(addr);
-    }).then(function(result, err){
-        if(result){
-            if(parseInt(result.receipt.status) == 1)
-            alert(addr + " registration done successfully")
-            else
-            alert(addr + " registration not done successfully due to revert")
-        } else {
-            alert(addr + " registration failed")
-        }   
+  handleRegister: function (addr) {
+    var contractInstance;
+    App.contracts.vote.deployed().then(function (instance) {
+      contractInstance = instance;
+      return contractInstance.register(addr);
+    }).then(function (result, err) {
+      if (result) {
+        if (parseInt(result.receipt.status) == 1)
+          alert(addr + " registration done successfully")
+        else
+          alert(addr + " registration not done successfully due to revert")
+      } else {
+        alert(addr + " registration failed")
+      }
     });
-},
+  },
 
   handleWinner: function () {
     console.log("To get winner");
-    var voteInstance;
+    var contractInstance;
     App.contracts.vote.deployed().then(function (instance) {
-      voteInstance = instance;
-      return voteInstance.reqWinner();
+      contractInstance = instance;
+      return contractInstance.collectWinner();
     }).then(function (res) {
       console.log(res);
+      // TODO: figure out how ta throw the names in for the winners. 
+      // Also peep if the contract can be redone and simplified like you did. 
+      // bc that might fuck you over 
       alert(App.names[res] + "  is the winner ! :)");
     }).catch(function (err) {
       console.log(err.message);
     })
   },
 
-
   handleGenAppScore: function (event) {
     event.preventDefault();
     var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
 
-    // TODO: you need data-id="0,1,2,3,4..." in the button tags in the html for proposal id to work
-
-    var proposalId = parseInt($(event.target).data('id'));
-
-    console.log(proposalId)
-
-    var voteInstance;
-
-    web3.eth.getAccounts(function(error, accounts) {
-      var account = accounts[0];
-
-      App.contracts.vote.deployed().then(function(instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(proposalId, {from: account});
-      }).then(function(result, err){
-            if(result){
-                console.log(result.receipt.status);
-                if(parseInt(result.receipt.status) == 1)
-                alert(account + " voting done successfully")
-                else
-                alert(account + " voting not done successfully due to revert")
-            } else {
-                alert(account + " voting failed")
-            }   
-        });
-    });
-  },
-
-  handleHeadScore: function (score) {
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
-
       App.contracts.vote.deployed().then(function (instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(score, {
+        contractInstance = instance;
+        return contractInstance.generalAppearanceScore(score, dogId, {
           from: account
         });
       }).then(function (result, err) {
         if (result) {
           console.log(result.receipt.status);
           if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
+            alert(account + " voting done successfully")
           else
-            alert(account + " General Appearence Score not done successfully due to revert")
+            alert(account + " voting not done successfully due to revert")
         } else {
-          alert(account + " General Appearence Score failed")
+          alert(account + " voting failed")
         }
       });
     });
   },
 
-  handleBodyScore: function (score) {
+  handleHeadScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
+
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
-
       App.contracts.vote.deployed().then(function (instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(score, {
+        contractInstance = instance;
+        return contractInstance.headScore(score, dogId, {
           from: account
         });
       }).then(function (result, err) {
         if (result) {
           console.log(result.receipt.status);
           if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
+            alert(account + " voting done successfully")
           else
-            alert(account + " General Appearence Score not done successfully due to revert")
+            alert(account + " voting not done successfully due to revert")
         } else {
-          alert(account + " General Appearence Score failed")
+          alert(account + " voting failed")
         }
       });
     });
   },
-  handleForqScore: function (score) {
+
+  handleBodyScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
+
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
-
       App.contracts.vote.deployed().then(function (instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(score, {
+        contractInstance = instance;
+        return contractInstance.bodyScore(score, dogId, {
           from: account
         });
       }).then(function (result, err) {
         if (result) {
           console.log(result.receipt.status);
           if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
+            alert(account + " voting done successfully")
           else
-            alert(account + " General Appearence Score not done successfully due to revert")
+            alert(account + " voting not done successfully due to revert")
         } else {
-          alert(account + " General Appearence Score failed")
+          alert(account + " voting failed")
         }
       });
     });
   },
 
-  handleCoatScore: function (score) {
+  handleForqScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
+
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
-
       App.contracts.vote.deployed().then(function (instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(score, {
+        contractInstance = instance;
+        return contractInstance.forequarterScore(score, dogId, {
           from: account
         });
       }).then(function (result, err) {
         if (result) {
           console.log(result.receipt.status);
           if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
+            alert(account + " voting done successfully")
           else
-            alert(account + " General Appearence Score not done successfully due to revert")
+            alert(account + " voting not done successfully due to revert")
         } else {
-          alert(account + " General Appearence Score failed")
+          alert(account + " voting failed")
         }
       });
     });
   },
 
-  handleHindqScore: function (score) {
+  handleCoatScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
+
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
-
       App.contracts.vote.deployed().then(function (instance) {
-        voteInstance = instance;
-
-        return voteInstance.generalAppearanceScore(score, {
+        contractInstance = instance;
+        return contractInstance.coatScore(score, dogId, {
           from: account
         });
       }).then(function (result, err) {
         if (result) {
           console.log(result.receipt.status);
           if (parseInt(result.receipt.status) == 1)
-            alert(account + " General Appearence Score done successfully")
+            alert(account + " voting done successfully")
           else
-            alert(account + " General Appearence Score not done successfully due to revert")
+            alert(account + " voting not done successfully due to revert")
         } else {
-          alert(account + " General Appearence Score failed")
+          alert(account + " voting failed")
         }
       });
     });
   },
 
-  // handleChangeGroup: function (group) {
-  //   console.log(group);
-  // },
+  handleHindqScore: function (event) {
+    event.preventDefault();
+    var score = $("#enter_score option:selected").val();
+    var dogId = parseInt($(event.target).data('id'));
+    var contractInstance;
 
-  // handleChangeDog : function (dog) {
-  //   console.log("change dog not yet implemented");
-  // }
+    web3.eth.getAccounts(function (error, accounts) {
+      var account = accounts[0];
+      App.contracts.vote.deployed().then(function (instance) {
+        contractInstance = instance;
+        return contractInstance.hindquarterScore(score, dogId, {
+          from: account
+        });
+      }).then(function (result, err) {
+        if (result) {
+          console.log(result.receipt.status);
+          if (parseInt(result.receipt.status) == 1)
+            alert(account + " voting done successfully")
+          else
+            alert(account + " voting not done successfully due to revert")
+        } else {
+          alert(account + " voting failed")
+        }
+      });
+    });
+  }
 };
 
 $(function () {

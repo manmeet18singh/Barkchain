@@ -103,12 +103,12 @@ contract DogShow {
         // require (!judges[judge].voted_hqScr, "Cannot have already voted");
 
         judges[judge].weight = 1;
-        judges[judge].voted_genApScr = false;
-        judges[judge].voted_hScr = false;
-        judges[judge].voted_bScr = false;
-        judges[judge].voted_fScr = false;
-        judges[judge].voted_cScr = false;
-        judges[judge].voted_hqScr = false;
+        // judges[judge].voted_genApScr = false;
+        // judges[judge].voted_hScr = false;
+        // judges[judge].voted_bScr = false;
+        // judges[judge].voted_fScr = false;
+        // judges[judge].voted_cScr = false;
+        // judges[judge].voted_hqScr = false;
     }
 
     // Select the dog that is being scored
@@ -139,7 +139,7 @@ contract DogShow {
     // function generalAppearanceScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
     function generalAppearanceScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require (!sender.voted_genApScr, "Cannot have already voted");
+        require (!sender.voted_genApScr, "Cannot have already voted");
         // require (currentDog < dogs.length, "Invalid Dog");
 
         dogs[toDog].genApScr += (scr + sender.weight);
@@ -149,7 +149,7 @@ contract DogShow {
     // function headScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)){
     function headScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require (!sender.voted_hScr, "Cannot have already voted");
+        require (!sender.voted_hScr, "Cannot have already voted");
         // require (currentDog < dogs.length, "Invalid Dog");
 
         dogs[toDog].hScr += (scr + sender.weight);
@@ -159,7 +159,7 @@ contract DogShow {
     // function bodyScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
     function bodyScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require(!sender.voted_bScr, "Cannot have already voted");
+        require(!sender.voted_bScr, "Cannot have already voted");
         // require(currentDog < dogs.length, "Invalid Dog");
 
         dogs[toDog].bScr += (scr + sender.weight);
@@ -169,7 +169,7 @@ contract DogShow {
     // function forequarterScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
     function forequarterScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require(!sender.voted_fScr, "Cannot have already voted");
+        require(!sender.voted_fScr, "Cannot have already voted");
         // require(currentDog < dogs.length, "Invalid Dog");
 
         dogs[toDog].fScr += (scr + sender.weight);
@@ -179,7 +179,7 @@ contract DogShow {
     // function coatScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
     function coatScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require(!sender.voted_cScr, "Cannot have already voted");
+        require(!sender.voted_cScr, "Cannot have already voted");
         // require(currentDog < dogs.length, "Invalid Dog");
 
         dogs[toDog].cScr += (scr + sender.weight);
@@ -189,7 +189,7 @@ contract DogShow {
     // function hindquarterScore(uint scr) public validPhase(Phase.Vote) validGroup(getDogType(currentDog)) {
     function hindquarterScore(uint scr, uint toDog) public {
         Judge memory sender = judges[msg.sender];
-        // require(!sender.voted_hqScr, "Cannot have already voted");
+        require(!sender.voted_hqScr, "Cannot have already voted");
         // require(currentDog < dogs.length, "Invalid Dog");
         dogs[toDog].hqScr += (scr + sender.weight);
         sender.voted_hqScr = true;

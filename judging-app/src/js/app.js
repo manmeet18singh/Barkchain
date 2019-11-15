@@ -35,7 +35,17 @@ App = {
       App.contracts.vote.setProvider(App.web3Provider);
 
       App.getChairperson();
+      App.render();
       return App.bindEvents();
+    });
+  },
+
+  render: function () {
+    web3.eth.getCoinbase(function(err, account) {
+      if (err === null) {
+        App.account = account;
+        $("#accountAddress").html(account);
+      }
     });
   },
 
@@ -80,6 +90,7 @@ App = {
     }).then(function (result) {
       App.chairPerson = result.constructor.currentProvider.selectedAddress.toString();
       App.currentAccount = web3.eth.coinbase;
+
     })
   },
 
@@ -108,10 +119,27 @@ App = {
       return contractInstance.collectWinner();
     }).then(function (res) {
       console.log(res);
-      // TODO: figure out how ta throw the names in for the winners. 
-      // Also peep if the contract can be redone and simplified like you did. 
-      // bc that might fuck you over 
-      alert(App.names[res] + "  is the winner ! :)");
+      if(res == 1){
+        alert("Lola is the winner!");
+      }
+      else if (res == 2) {
+        alert("Toby is the winner!");
+      }
+      else if (res == 3) {
+        alert("Buddy is the winner!");
+      }
+      else if (res == 4) {
+        alert("Maggie is the winner!");
+      }
+      else if (res == 5) {
+        alert("Riley is the winner!");
+      }
+      else if (res == 6) {
+        alert("Max is the winner!");
+      }
+      else {
+        alert("Coco is the winner!");
+      }
     }).catch(function (err) {
       console.log(err.message);
     })
@@ -121,10 +149,12 @@ App = {
     event.preventDefault();
     var score = $("#enter_score option:selected").val();
     var dogId = parseInt($(event.target).data('id'));
+    console.log(dogId);
     var contractInstance;
 
     web3.eth.getAccounts(function (error, accounts) {
       var account = accounts[0];
+      console.log(account);
       App.contracts.vote.deployed().then(function (instance) {
         contractInstance = instance;
         return contractInstance.generalAppearanceScore(score, dogId, {

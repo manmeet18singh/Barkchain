@@ -1,5 +1,5 @@
 var dogShow = artifacts.require("DogShow");
 
 module.exports = function(deployer) {
-    deployer.deploy(dogShow, 7);
+    deployer.deploy(dogShow, 8);
 };

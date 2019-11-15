@@ -41,7 +41,7 @@ App = {
   },
 
   render: function () {
-    web3.eth.getCoinbase(function(err, account) {
+    web3.eth.getCoinbase(function (err, account) {
       if (err === null) {
         App.account = account;
         $("#accountAddress").html(account);
@@ -90,7 +90,13 @@ App = {
     }).then(function (result) {
       App.chairPerson = result.constructor.currentProvider.selectedAddress.toString();
       App.currentAccount = web3.eth.coinbase;
-
+      // if (App.currentAccount != App.chairPerson) {
+      //   console.log(App.currentAccount);
+      //   content.hide();
+      // } else {
+      //   (App.chairPerson);
+      //   content.show();
+      // }
     })
   },
 
@@ -119,25 +125,19 @@ App = {
       return contractInstance.collectWinner();
     }).then(function (res) {
       console.log(res);
-      if(res == 1){
+      if (res == 1) {
         alert("Lola is the winner!");
-      }
-      else if (res == 2) {
+      } else if (res == 2) {
         alert("Toby is the winner!");
-      }
-      else if (res == 3) {
+      } else if (res == 3) {
         alert("Buddy is the winner!");
-      }
-      else if (res == 4) {
+      } else if (res == 4) {
         alert("Maggie is the winner!");
-      }
-      else if (res == 5) {
+      } else if (res == 5) {
         alert("Riley is the winner!");
-      }
-      else if (res == 6) {
+      } else if (res == 6) {
         alert("Max is the winner!");
-      }
-      else {
+      } else {
         alert("Coco is the winner!");
       }
     }).catch(function (err) {
